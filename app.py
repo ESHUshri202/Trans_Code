@@ -4,7 +4,7 @@ from flask_cors import CORS
 
 
 app = Flask(__name__)
-CORS(app)
+CORS(app,resources={r"/*": {"origins": "http://localhost:5173"}})
 translator = Translator()
 
 @app.route('/translate',methods=['POST'])
